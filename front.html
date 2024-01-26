@@ -1,0 +1,20 @@
+<div class="front-side">
+  <div class="box">
+    <div class="box-content">
+      <p class="definition">{{Definition}}</p>
+      <small class="type">{{Type}}</small>
+    </div>
+    <div class="line"></div>
+    <ul class="example">
+      {{Example}}
+    </ul>
+  </div>
+  <figure class="image-container">{{Picture}}</figure>
+  {{type:Word}}
+</div>
+
+<script>
+  if (document.querySelector(".example").textContent.length === 0) {
+    document.querySelector(".line").style.display = "none";
+  }
+</script>

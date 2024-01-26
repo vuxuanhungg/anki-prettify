@@ -1,0 +1,17 @@
+{{FrontSide}}
+<div class="phonetic-symbol">{{Phonetic Symbol}}</div>
+<div class="related-word-group">
+  <p class="related-word-item synonyms">{{Synonyms}}</p>
+  <p class="related-word-item antonyms">{{Antonyms}}</p>
+</div>
+
+<script>
+  // Set grid columns to 1 if missing "synonyms" or "antonyms"
+  if (
+    document.querySelector(".synonyms").textContent.length === 0 ||
+    document.querySelector(".antonyms").textContent.length === 0
+  ) {
+    document.querySelector(".related-word-group").style.gridTemplateColumns =
+      "initial";
+  }
+</script>

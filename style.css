@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-gray-300: rgb(209 213 219);
+  --color-gray-700: rgb(55 65 81);
+  --color-green-200: rgb(187 247 208);
+  --color-green-700: rgb(21 128 61);
+  --color-red-200: rgb(254 202 202);
+  --color-red-700: rgb(185 28 28);
+}
+
+html,
+body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0 0 0);
+  font-size: 16px;
+}
+
+#qa {
+  max-width: 32rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.front-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#typeans {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: serif !important;
+  font-size: 2rem !important;
+  line-height: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+input#typeans {
+  border: 1px solid var(--color-gray-300);
+}
+
+.box {
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.75rem;
+}
+
+.box-content {
+  padding: 1rem;
+}
+
+.definition {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.type {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  color: var(--color-green-700);
+  border: 1px solid var(--color-green-700);
+  border-radius: 9999px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gray-300);
+}
+
+.example {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 1rem;
+  font-style: italic;
+  color: var(--color-gray-700);
+}
+
+.image-container img {
+  display: block;
+  max-width: 100%;
+  min-height: 300px;
+  max-height: 500px;
+  margin: 0 auto;
+  border-radius: 0.75rem;
+}
+
+.phonetic-symbol {
+  margin-top: 1rem;
+  color: var(--color-gray-700);
+  text-align: center;
+}
+
+.related-word-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.related-word-item {
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.synonyms {
+  background-color: var(--color-green-200);
+  color: var(--color-green-700);
+}
+
+.antonyms {
+  background-color: var(--color-red-200);
+  color: var(--color-red-700);
+}
+
+.type:empty,
+.example:empty,
+.image-container:empty,
+.synonyms:empty,
+.antonyms:empty {
+  display: none;
+}
