@@ -1,138 +1,155 @@
+@font-face {
+  font-family: myfont;
+  src: url("_Inter-VariableFont_slnt,wght.ttf");
+}
+
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e7e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --color-gray-300: rgb(209 213 219);
-  --color-gray-700: rgb(55 65 81);
-  --color-green-200: rgb(187 247 208);
-  --color-green-700: rgb(21 128 61);
-  --color-red-200: rgb(254 202 202);
-  --color-red-700: rgb(185 28 28);
+body {
+  font-family: myfont;
+  font-size: 20px;
+  color: var(--nord0);
+  background: var(--nord6);
 }
 
-html,
-body {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0 0 0);
-  font-size: 16px;
+ul {
+  padding: 0 1rem;
+  list-style-position: inside;
+  list-style-type: circle;
 }
 
 #qa {
-  max-width: 32rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+  min-height: 450px;
+  max-width: 550px;
+  margin: 0 auto;
 
-.front-side {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
 
-#typeans {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-family: serif !important;
-  font-size: 2rem !important;
-  line-height: 2rem;
-  font-weight: 600;
+  background: #fff;
+  padding: 1.5rem 1.25rem;
   text-align: center;
-}
-
-input#typeans {
-  border: 1px solid var(--color-gray-300);
-}
-
-.box {
-  border: 1px solid var(--color-gray-300);
-  border-radius: 0.75rem;
-}
-
-.box-content {
-  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .definition {
-  font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.1em;
 }
 
-.type {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  color: var(--color-green-700);
-  border: 1px solid var(--color-green-700);
-  border-radius: 9999px;
-}
-
-.line {
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-gray-300);
-}
-
-.example {
-  list-style-type: disc;
-  list-style-position: inside;
-  padding: 1rem;
-  font-style: italic;
-  color: var(--color-gray-700);
+.class {
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: var(--nord6);
+  background: var(--nord7);
 }
 
 .image-container img {
-  display: block;
-  max-width: 100%;
-  min-height: 300px;
-  max-height: 500px;
-  margin: 0 auto;
-  border-radius: 0.75rem;
+  max-width: 75%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.phonetic-symbol {
-  margin-top: 1rem;
-  color: var(--color-gray-700);
+.example {
+  color: var(--nord1);
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: var(--nord4);
+  border: none;
+  margin: 0.5rem 0;
+}
+
+.pronunciation {
+  color: var(--nord2);
+}
+
+#typeans {
+  font-family: serif !important;
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  width: 400px;
+  color: var(--nord0);
+  padding: 8px 12px;
   text-align: center;
+  border: 1px solid var(--nord7);
+  border-radius: 4px;
 }
 
-.related-word-group {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem;
-  margin-top: 1rem;
+#typeans:focus {
+  outline: 1px solid var(--nord8);
 }
 
-.related-word-item {
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  text-align: center;
-}
-
-.synonyms {
-  background-color: var(--color-green-200);
-  color: var(--color-green-700);
-}
-
+.synonyms,
 .antonyms {
-  background-color: var(--color-red-200);
-  color: var(--color-red-700);
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.type:empty,
+.synonym,
+.antonym {
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.synonym,
+.typeGood {
+  color: var(--nord6);
+  background: var(--nord14);
+}
+
+.antonym,
+.typeBad {
+  color: var(--nord6);
+  background: var(--nord11);
+}
+
+.typeMissed {
+  color: var(--nord6);
+  background: var(--nord3);
+}
+
+.typearrow {
+  color: var(--nord3);
+}
+
 .example:empty,
+.class:empty,
 .image-container:empty,
+.pronunciation:empty,
 .synonyms:empty,
-.antonyms:empty {
+.synonyms:empty {
   display: none;
 }

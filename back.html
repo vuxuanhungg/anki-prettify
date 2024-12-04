@@ -1,17 +1,53 @@
 {{FrontSide}}
-<div class="phonetic-symbol">{{Phonetic Symbol}}</div>
-<div class="related-word-group">
-  <p class="related-word-item synonyms">{{Synonyms}}</p>
-  <p class="related-word-item antonyms">{{Antonyms}}</p>
+<hr id="divider" class="divider" />
+<p id="pronunciation" class="pronunciation">{{Pronunciation}}</p>
+<div>
+  <div id="synonyms" class="synonyms">{{Synonyms}}</div>
+  <div id="antonyms" class="synonyms">{{Antonyms}}</div>
 </div>
 
 <script>
-  // Set grid columns to 1 if missing "synonyms" or "antonyms"
-  if (
-    document.querySelector(".synonyms").textContent.length === 0 ||
-    document.querySelector(".antonyms").textContent.length === 0
-  ) {
-    document.querySelector(".related-word-group").style.gridTemplateColumns =
-      "initial";
-  }
+  (function () {
+    // Split and style synonyms separated by commas
+    const synonymEl = document.getElementById("synonyms");
+    synonyms =
+      synonymEl.textContent.trim().length > 0
+        ? synonymEl.textContent.split(",").map((s) => s.trim())
+        : null;
+
+    synonymEl.innerHTML = "";
+
+    if (synonyms) {
+      synonyms.forEach(
+        (s) => (synonymEl.innerHTML += `<p class='synonym'>${s}</p>`)
+      );
+    }
+
+    // Split and style antonyms separated by commas
+    const antonymEl = document.getElementById("antonyms");
+    antonyms =
+      antonymEl.textContent.trim().length > 0
+        ? antonymEl.textContent.split(",").map((a) => a.trim())
+        : null;
+
+    antonymEl.innerHTML = "";
+
+    if (antonyms) {
+      antonyms.forEach(
+        (a) => (antonymEl.innerHTML += `<p class='antonym'>${a}</p>`)
+      );
+    }
+
+    // Do not display divider if no synonyms or antonyms
+    const dividerEl = document.getElementById("divider");
+    if (!synonyms || !antonyms) {
+      dividerEl.style.display = "none";
+    }
+
+    // Hide input border on the back side
+    const input = document.getElementById("typeans");
+    if (dividerEl) {
+      input.style.border = "none";
+    }
+  })();
 </script>
