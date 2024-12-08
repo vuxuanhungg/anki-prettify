@@ -79,6 +79,7 @@ ul {
 
 .example {
   color: var(--nord1);
+  max-width: 100%;
 }
 
 .divider {
